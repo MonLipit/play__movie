@@ -62,4 +62,6 @@
 .introduce .main__content{
     line-height: 1.4;
 }
-
+.main__blockbuster .blockbuster__header-text{
+    color: #ffa500;
+}
