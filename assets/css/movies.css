@@ -1,0 +1,65 @@
+.main__movie {
+    padding-top: 64px;
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; */
+}
+
+.movie__header {
+    font-size: 3rem;
+    padding: 40px 0;
+    color: var(--title-color);
+} 
+
+.movieWrapper {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.movieWrapper video {
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+
+
+}
+
+.movie__trailer {
+    font-size: 3rem;
+    padding: 40px 0;
+    color: var(--title-color);
+}
+
+.trailerWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin-bottom: 3rem;
+}
+
+.trailerWrapper iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.introduce .introduce__top .text{
+    color: #ffa500;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.introduce .introduce__top .text{
+    font-size: 30px;
+}
+.introduce .content .bold{
+    font-size: 30px;
+}
+.introduce .main__content{
+    line-height: 1.4;
+}
+
