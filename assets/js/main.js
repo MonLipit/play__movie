@@ -13,91 +13,106 @@ const headerNavbarItems = $$(".header__navBar li");
 console.log(headerNavbarItems);
 
 var swiper = new Swiper(".trendingList", {
-    slidesPerView: 2,
-    spaceBetween: 15,
-    slidesPerGroup: 1,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  slidesPerView: 2,
+  spaceBetween: 15,
+  slidesPerGroup: 1,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    740: {
+      slidesPerView: 4,
+      slidesPerGroup: 2,
     },
-    breakpoints: {
-        740: {
-            slidesPerView: 4,
-            slidesPerGroup: 2,
-        },
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
 // xử lí main-sidebar khi có sự kiện nhấn phím
 openSidebarBtn.addEventListener("click", () => {
-    openSidebar();
+  openSidebar();
 });
 
 closeSidebarBtn.addEventListener("click", () => {
-    closeSidebar();
+  closeSidebar();
 });
 
 overlay.addEventListener("click", () => {
-    closeSidebar();
+  closeSidebar();
 });
 
 function openSidebar() {
-    menuSidebar.style.display = "block";
-    overlay.style.display = "block";
+  menuSidebar.style.display = "block";
+  overlay.style.display = "block";
 }
 
 function closeSidebar() {
-    menuSidebar.style.display = "none";
-    overlay.style.display = "none";
-    $(".menu__sidebar-item.active") &&
-        $(".menu__sidebar-item.active").classList.remove("active");
+  menuSidebar.style.display = "none";
+  overlay.style.display = "none";
+  $(".menu__sidebar-item.active") &&
+    $(".menu__sidebar-item.active").classList.remove("active");
 }
 
 // open subsidebar
 sidebarItems.forEach((sidebarItem, index) => {
-    sidebarItem.addEventListener("click", (e) => {
-        if (index !== showingIndex) {
-            $(".menu__sidebar-item.active") &&
-                $(".menu__sidebar-item.active").classList.remove("active");
-            sidebarItem.classList.add("active");
-            showingIndex = index;
-        } else {
-            sidebarItem.classList.remove("active");
-            showingIndex = undefined;
-        }
-    });
+  sidebarItem.addEventListener("click", (e) => {
+    if (index !== showingIndex) {
+      $(".menu__sidebar-item.active") &&
+        $(".menu__sidebar-item.active").classList.remove("active");
+      sidebarItem.classList.add("active");
+      showingIndex = index;
+    } else {
+      sidebarItem.classList.remove("active");
+      showingIndex = undefined;
+    }
+  });
 });
 
 // Xử lí active navbar
 headerNavbarItems.forEach((headerNavbarItem) => {
-    headerNavbarItem.addEventListener("click", () => {
-        $(".header__navBar li.active").classList.remove("active");
-        headerNavbarItem.classList.add("active");
-    });
+  headerNavbarItem.addEventListener("click", () => {
+    $(".header__navBar li.active").classList.remove("active");
+    headerNavbarItem.classList.add("active");
+  });
 });
 
 // Xử lí nút premium
 premiumBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    showSubcription();
+  e.preventDefault();
+  showSubcription();
 });
 
 overlay.addEventListener("click", () => {
-    hideSubcription();
+  hideSubcription();
 });
 
 function showSubcription() {
-    subcription.style.display = "flex";
-    overlay.style.display = "block";
+  subcription.style.display = "flex";
+  overlay.style.display = "block";
 }
 
 function hideSubcription() {
-    subcription.style.display = "none";
-    overlay.style.display = "none";
+  subcription.style.display = "none";
+  overlay.style.display = "none";
+}
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
 }

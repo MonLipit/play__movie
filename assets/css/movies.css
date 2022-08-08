@@ -58,10 +58,29 @@
 }
 .introduce .content .bold{
     font-size: 30px;
+    color: #ffa500;
 }
 .introduce .main__content{
+    /* color: white; */
     line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* -webkit-line-clamp: 3; */
 }
 .main__blockbuster .blockbuster__header-text{
     color: #ffa500;
+}
+#more{
+    display: none;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+#myBtn:hover{
+    /* text-decoration: none; */
+    /* box-decoration-break:; */
+    color: #ffa500;
+    cursor: pointer;
 }
